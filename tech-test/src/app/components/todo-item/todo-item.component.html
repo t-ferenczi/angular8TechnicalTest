@@ -1,0 +1,22 @@
+<div *ngIf="task" class="task" [class.done]="task.done">
+    <div class="task-property">
+        <label for="label">Label:</label>
+        <span>{{ task.label }}</span>
+    </div>
+    <div class="task-property">
+        <label for="description">Description:</label>
+        <span>{{ task.description }}</span>
+    </div>
+    <div class="task-property">
+        <label for="category">Category:</label>
+        <span>{{ task.category }}</span>
+    </div>
+    <div class="task-property">
+        <label>Done:</label>
+        <span>{{ task.done ? task.done : ''}}</span>
+    </div>
+
+    <button (click)="onUpdate()" class="edit">Edit</button>
+    <button (click)="onDelete()" class="delete">Delete</button>
+    <button (click)="onDone()" class="done" *ngIf="!task.done">Done</button>
+</div>

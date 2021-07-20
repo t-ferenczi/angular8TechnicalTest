@@ -1,0 +1,21 @@
+<div *ngIf="task" class="task" [class.done]="task.done">
+    <div class="task-property">
+        <label for="label">Label:</label>
+        <input type="text" id="label" [(ngModel)]="task.label">
+    </div>
+    <div class="task-property">
+        <label for="description">Description:</label>
+        <input type="text" id="description" [(ngModel)]="task.description">
+    </div>
+    <div class="task-property">
+        <label for="category">Category:</label>
+        <input type="text" id="category" [(ngModel)]="task.category">
+    </div>
+    <div class="task-property">
+        <label>Done:</label>
+        <span *ngIf="task.done">{{ task.done }}</span>
+    </div>
+
+    <button (click)="onSave()">Save</button>
+    <button (click)="onCancel()">Cancel</button>
+</div>

@@ -1,0 +1,17 @@
+<div class="filter">
+    <input type="text" [(ngModel)]="filter" placeholder="Filter by text">
+</div>
+
+<div *ngIf="list">
+    <ng-container *ngFor="let task of list">
+        <app-todo-item 
+        *ngIf="found(task)"
+        [task]="task"
+        (delete)="onDelete(task)"
+        (done)="onDone(task)">
+        </app-todo-item>
+    </ng-container>
+
+</div>
+
+<a routerLink="/task"><button>New task</button></a>
